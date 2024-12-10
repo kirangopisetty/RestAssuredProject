@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/allCourses"
+    },
+    "response": {
+        "status": "200",
+        "body": "Kiran Academy offers 5 courses namely Postman, Rest Assured, JMeter, Load Runner & Selenium",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}
