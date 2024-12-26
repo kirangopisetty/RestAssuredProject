@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-11T09:50:08 IST" name="Default suite" finished-at="2024-12-11T09:50:11 IST" duration-ms="3827">
+  <suite started-at="2024-12-26T10:29:42 IST" name="Default suite" finished-at="2024-12-26T10:29:44 IST" duration-ms="1612">
     <groups>
     </groups>
-    <test started-at="2024-12-11T09:50:08 IST" name="Default test" finished-at="2024-12-11T09:50:11 IST" duration-ms="3827">
-      <class name="com.api.tests.basicAuthenticationAPItest">
-        <test-method signature="basicAuthAPI()[pri:0, instance:com.api.tests.basicAuthenticationAPItest@60856961]" started-at="2024-12-11T09:50:08 IST" name="basicAuthAPI" finished-at="2024-12-11T09:50:11 IST" duration-ms="3719" status="PASS">
+    <test started-at="2024-12-26T10:29:42 IST" name="Default test" finished-at="2024-12-26T10:29:44 IST" duration-ms="1612">
+      <class name="com.api.tests.createUserPOSTAPIexternalJSONfile">
+        <test-method signature="createUserPostAPIexternalJsonFile()[pri:0, instance:com.api.tests.createUserPOSTAPIexternalJSONfile@3abada5a]" started-at="2024-12-26T10:29:42 IST" name="createUserPostAPIexternalJsonFile" finished-at="2024-12-26T10:29:44 IST" duration-ms="1540" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- basicAuthAPI -->
-      </class> <!-- com.api.tests.basicAuthenticationAPItest -->
+        </test-method> <!-- createUserPostAPIexternalJsonFile -->
+      </class> <!-- com.api.tests.createUserPOSTAPIexternalJSONfile -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
