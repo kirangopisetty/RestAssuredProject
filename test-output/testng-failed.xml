@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.tests.createUserPOSTAPIexternalJSONfile">
+      <class name="com.api.tests.E2EapiAutomation">
         <methods>
-          <include name="createUserPostAPIexternalJsonFile"/>
+          <include name="verifyIfUserIsCreated"/>
+          <include name="createUserAPI"/>
         </methods>
-      </class> <!-- com.api.tests.createUserPOSTAPIexternalJSONfile -->
+      </class> <!-- com.api.tests.E2EapiAutomation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

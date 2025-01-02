@@ -27,8 +27,8 @@ public class createUserPOSTAPIjavaFakerLibrary {
 		
 		when().
 			body(requestBody.toString()).
-			post("https://gorest.co.in/public/v2/users");
-			
+			post("https://gorest.co.in/public/v2/users");	
+		
 			Assert.assertEquals(response.getStatusCode(), 201);
 			Assert.assertEquals(response.getStatusLine(), "HTTP/1.1 201 Created");
 			Assert.assertEquals(response.getContentType(), "application/json; charset=utf-8");
@@ -38,11 +38,10 @@ public class createUserPOSTAPIjavaFakerLibrary {
 			System.out.println("Response Time >> "+response.getTime()+" ms");
 			System.out.println("Response Headers >> "+response.getHeaders());
 			System.out.println("Response Body >> "+response.getBody());
-								
+									
 		// then().
 		//	statusCode(201).
 		//	header("Content-Type", "application/json; charset=utf-8").
-		//	log().all();
-		
+		//	log().all();		
 	}
 }

@@ -1,7 +1,6 @@
 package com.api.tests;
 
 import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
 
 public class faker {

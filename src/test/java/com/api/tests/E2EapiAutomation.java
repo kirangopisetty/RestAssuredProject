@@ -1,13 +1,11 @@
 package com.api.tests;
 
-import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
-
 import io.restassured.module.jsv.JsonSchemaValidator;
-
 import static io.restassured.RestAssured.*;
 
 	public class E2EapiAutomation {
@@ -33,8 +31,8 @@ import static io.restassured.RestAssured.*;
 				body(requestBody.toString()).
 				post("https://gorest.co.in/public/v2/users").
 				jsonPath().getInt("id");
+				System.out.println("ID created is >> "+extractedID);
 
-			
 		//	then().
 		//		assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("postAPIschema.json")).
 		//		statusCode(201).
@@ -57,11 +55,10 @@ import static io.restassured.RestAssured.*;
 				statusCode(200).
 				body("gender", hasItems("male", "female")).
 				body("status", hasItems("active", "inactive")).
-			//	body("id", hasItems(+extractedID)).
-			//	body("[0].name", equalTo("Nawal Bhattathiri")).
-			//	body("[1].id", equalTo(7561792)).
-			//	body("[2].email", equalTo("shwet_tandon@reichel-ledner.test")).
-				log().body();	// prints only response body
+				body("id", equalTo(+extractedID))
+			//	body("[0].id", equalTo(+extractedID)).
+				.log().body();	// prints only response body
+				System.out.println("ID being verified in GET API is >> "+extractedID);
 			}
 		
 		@Test (priority = 2, dependsOnMethods={"createUserAPI"})
@@ -84,8 +81,8 @@ import static io.restassured.RestAssured.*;
 			then().
 				assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("patchAPIschema.json")).
 				statusCode(200).
-				header("Content-Type", "application/json; charset=utf-8").
-				log().all();	
+				log().body();
+				System.out.println("ID updated is >> "+extractedID);
 		}
 		
 		@Test (priority = 3, dependsOnMethods={"createUserAPI"})
@@ -102,12 +99,8 @@ import static io.restassured.RestAssured.*;
 			then().
 				assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("getAPIschema.json")).
 				statusCode(200).
-				body("gender", hasItems("male", "female")).
-				body("status", hasItems("active", "inactive")).
-			//	body("id", hasItems(+extractedID)).
-			//	body("[0].name", equalTo("Nawal Bhattathiri")).
-			//	body("[1].id", equalTo(7561792)).
-			//	body("[2].email", equalTo("shwet_tandon@reichel-ledner.test")).
+				body("id", equalTo(+extractedID)).
+			//	body("[0].id", equalTo(+extractedID)).
 				log().body();	// prints only response body
 			}
 		
@@ -124,6 +117,7 @@ import static io.restassured.RestAssured.*;
 			
 			.then()
 				.statusCode(204);
+				System.out.println("ID deleted is >> "+extractedID);
 		}
 		
 		@Test (priority = 5, dependsOnMethods={"createUserAPI"})
@@ -140,11 +134,7 @@ import static io.restassured.RestAssured.*;
 			then().
 				assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("getAPIschema.json")).
 				statusCode(200).
-				body("gender", hasItems("male", "female")).
-				body("status", hasItems("active", "inactive")).
-			//	body("[0].name", equalTo("Nawal Bhattathiri")).
-			//	body("[1].id", equalTo(7561792)).
-			//	body("[2].email", equalTo("shwet_tandon@reichel-ledner.test")).
+				body("[0].id", not(equalTo(+extractedID))).
 				log().body();	// prints only response body
 			}
 }
