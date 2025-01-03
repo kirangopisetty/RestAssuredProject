@@ -3,11 +3,9 @@ package com.api.tests;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
-
-import com.github.javafaker.Faker;
-
 import static io.restassured.RestAssured.*;
 import org.json.JSONObject;
+import com.github.javafaker.Faker;
 public class updateUserFakerLibrary {
 
 	Faker faker = new Faker();
@@ -30,6 +28,8 @@ public class updateUserFakerLibrary {
 		
 		.then()
 			.statusCode(200)
+			.assertThat().body("gender", oneOf("male","female"))
+			.assertThat().body("status", oneOf("active","inactive"))
 			.time(Matchers.lessThan(2000L))
 			//.time(Matchers.greaterThan(1000L))
 			//.time(Matchers.both(Matchers.greaterThanOrEqualTo(1000L)).and(Matchers.lessThanOrEqualTo(2000L)));

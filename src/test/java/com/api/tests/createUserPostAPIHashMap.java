@@ -29,6 +29,8 @@ public class createUserPostAPIHashMap {
 		
 		.then()
 			.statusCode(201)
+			.assertThat().body("gender", oneOf("male","female"))
+			.assertThat().body("status", oneOf("active","inactive"))
 			.statusLine("HTTP/1.1 201 Created")
 			.log().status()
 			.time(Matchers.lessThan(2000L))

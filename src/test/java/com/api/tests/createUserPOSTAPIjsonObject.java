@@ -2,12 +2,12 @@ package com.api.tests;
 
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
-import org.json.JSONObject;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
+import org.json.JSONObject;
 
 public class createUserPOSTAPIjsonObject {
-	
+
 	@Test
 	public void createUserPostAPIjsonObject() {
 		
@@ -29,6 +29,8 @@ public class createUserPOSTAPIjsonObject {
 		.then()
 			.statusCode(201)
 			.statusLine("HTTP/1.1 201 Created")
+			.assertThat().body("gender", oneOf("male","female"))
+			.assertThat().body("status", oneOf("active","inactive"))
 			.log().status()
 			.time(Matchers.lessThan(2000L))
 			//.time(Matchers.greaterThan(1000L))

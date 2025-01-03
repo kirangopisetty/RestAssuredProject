@@ -1,5 +1,7 @@
 package com.api.tests;
 
+import static org.hamcrest.Matchers.oneOf;
+
 import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -33,12 +35,13 @@ public class createUserPOSTAPIjavaFakerLibrary {
 			Assert.assertEquals(response.getStatusLine(), "HTTP/1.1 201 Created");
 			Assert.assertEquals(response.getContentType(), "application/json; charset=utf-8");
 			
+			
 			System.out.println("Status Code >> "+response.getStatusCode());
 			System.out.println("Status Line >> "+response.getStatusLine());
 			System.out.println("Response Time >> "+response.getTime()+" ms");
 			System.out.println("Response Headers >> "+response.getHeaders());
 			System.out.println("Response Body >> "+response.getBody());
-									
+							
 		// then().
 		//	statusCode(201).
 		//	header("Content-Type", "application/json; charset=utf-8").

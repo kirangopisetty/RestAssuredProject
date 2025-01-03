@@ -1,7 +1,7 @@
 package com.api.tests;
 
 import static org.hamcrest.Matchers.*;
-import static org.hamcrest.Matchers.equalTo;
+
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
@@ -53,8 +53,8 @@ import static io.restassured.RestAssured.*;
 			then().
 				assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("getAPIschema.json")).
 				statusCode(200).
-				body("gender", hasItems("male", "female")).
-				body("status", hasItems("active", "inactive")).
+				assertThat().body("gender", oneOf("male","female")).
+				assertThat().body("status", oneOf("active","inactive")).
 				body("id", equalTo(+extractedID))
 			//	body("[0].id", equalTo(+extractedID)).
 				.log().body();	// prints only response body
@@ -81,6 +81,8 @@ import static io.restassured.RestAssured.*;
 			then().
 				assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("patchAPIschema.json")).
 				statusCode(200).
+				assertThat().body("gender", oneOf("male","female")).
+				assertThat().body("status", oneOf("active","inactive")).
 				log().body();
 				System.out.println("ID updated is >> "+extractedID);
 		}
@@ -99,6 +101,8 @@ import static io.restassured.RestAssured.*;
 			then().
 				assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("getAPIschema.json")).
 				statusCode(200).
+				assertThat().body("gender", oneOf("male","female")).
+				assertThat().body("status", oneOf("active","inactive")).
 				body("id", equalTo(+extractedID)).
 			//	body("[0].id", equalTo(+extractedID)).
 				log().body();	// prints only response body

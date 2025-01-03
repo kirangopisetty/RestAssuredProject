@@ -1,5 +1,7 @@
 package com.api.tests;
 
+import static org.hamcrest.Matchers.oneOf;
+
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
@@ -17,20 +19,22 @@ import static io.restassured.RestAssured.*;
 			requestBody.put("email", "user2@restassured.com");
 			requestBody.put("status", "active");
 			
-			extractedID = given().
-				header("Accept", "application/json").
-				header("Content-Type", "application/json").
-				header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29").
+			extractedID = given()
+				.header("Accept", "application/json")
+				.header("Content-Type", "application/json")
+				.header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
 			
-			when().
-				body(requestBody.toString()).
-				post("https://gorest.co.in/public/v2/users").
-				jsonPath().getInt("id");
+			.when()
+				.body(requestBody.toString())
+				.post("https://gorest.co.in/public/v2/users")
+				.jsonPath().getInt("id");
 			
-		//	then().
-		//		statusCode(201).
-		//		header("Content-Type", "application/json; charset=utf-8").
-		//		log().all();
+			
+		//	.then()
+		//		.statusCode(201)
+		//		.assertThat().body("gender", oneOf("male","female"))	
+		//		.header("Content-Type", "application/json; charset=utf-8")
+		//		.log().all();
 }
 		
 		@Test (priority = 2, dependsOnMethods={"createUserAPI"})
@@ -41,19 +45,21 @@ import static io.restassured.RestAssured.*;
 		requestBody.put("email", "usertwo2@restassured.com");
 		requestBody.put("status", "inactive");
 			
-			given().
-				header("Accept", "application/json").
-				header("Content-Type", "application/json").
-				header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29").
+			given()
+				.header("Accept", "application/json")
+				.header("Content-Type", "application/json")
+				.header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
 					
-			when().
-				body(requestBody.toString()).
-				patch("https://gorest.co.in/public/v2/users/"+extractedID).
+			.when()
+				.body(requestBody.toString())
+				.patch("https://gorest.co.in/public/v2/users/"+extractedID)
 			
-			then().
-				statusCode(200).
-				header("Content-Type", "application/json; charset=utf-8").
-				log().all();	
+			.then()
+				.statusCode(200)
+				.assertThat().body("gender", oneOf("male","female"))
+				.assertThat().body("status", oneOf("active","inactive"))
+				.header("Content-Type", "application/json; charset=utf-8")
+				.log().all();
 		}
 		
 		@Test (priority = 3,dependsOnMethods={"createUserAPI"})

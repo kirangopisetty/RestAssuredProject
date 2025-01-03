@@ -20,7 +20,8 @@ public class listUsersGetAPI {
 	then()
 		.statusCode(200)
 		.log().status()
-		.body("gender", hasItems("male", "female"))
+		.assertThat().body("gender", oneOf("male","female"))	// enum value check
+		.body("gender", hasItems("male", "female"))			// checking if response body has male, female both items
 		.body("status", hasItems("active", "inactive"))
 		.header("Content-Type", "application/json; charset=utf-8")
 	//	.body("[0].name", equalTo("Nawal Bhattathiri"))
