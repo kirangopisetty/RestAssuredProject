@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.tests.E2EapiAutomation">
+      <class name="com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach1">
         <methods>
-          <include name="verifyIfUserIsCreated"/>
-          <include name="createUserAPI"/>
+          <include name="createUserPostAPIdataDrivenAutomationTest" invocation-numbers="0 1 2 3"/>
         </methods>
-      </class> <!-- com.api.tests.E2EapiAutomation -->
+      </class> <!-- com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

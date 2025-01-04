@@ -2,16 +2,20 @@ package com.api.tests;
 
 import org.testng.annotations.DataProvider;
 
+import com.github.javafaker.Faker;
+
 public class testDataForDDT {
+	
+	Faker faker = new Faker();
 	
 	@DataProvider (name="createUserDDT")
 	public Object[][] createUserDDT() {
 		
 		return new Object[][] {
-			{"Haritha","haritha@restassured.com","female","active"},
-			{"Chandran","chandran@restassured.com","male","active"},
-			{"Mohit","mohit@restassured.com","male","inactive"},
-			{"Mallikarjuna","mallikarjuna@restassured.com","male","inactive"}
+			{faker.name().firstName(),faker.internet().emailAddress(),faker.demographic().sex(),"active"},
+			{faker.name().firstName(),faker.internet().emailAddress(),faker.demographic().sex(),"active"},
+			{faker.name().firstName(),faker.internet().emailAddress(),faker.demographic().sex(),"inactive"},
+			{faker.name().firstName(),faker.internet().emailAddress(),faker.demographic().sex(),"inactive"}
 		};
 	}
 
