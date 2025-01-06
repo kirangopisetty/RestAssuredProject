@@ -2,21 +2,21 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-04T10:22:17 IST" name="Default suite" finished-at="2025-01-04T10:22:21 IST" duration-ms="3865">
+  <suite started-at="2025-01-06T16:17:53 IST" name="Default suite" finished-at="2025-01-06T16:17:58 IST" duration-ms="5560">
     <groups>
     </groups>
-    <test started-at="2025-01-04T10:22:17 IST" name="Default test" finished-at="2025-01-04T10:22:21 IST" duration-ms="3865">
-      <class name="com.api.tests.createUserPOSTAPIDDTApproach3">
-        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTApproach3@64b73e7a]" started-at="2025-01-04T10:22:17 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-04T10:22:19 IST" duration-ms="2044" status="PASS">
+    <test started-at="2025-01-06T16:17:53 IST" name="Default test" finished-at="2025-01-06T16:17:58 IST" duration-ms="5560">
+      <class name="com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach2">
+        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach2@2f40e5db]" started-at="2025-01-06T16:17:53 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-06T16:17:55 IST" duration-ms="2544" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lowell]]>
+                <![CDATA[Vivien]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[rosalva.sporer@yahoo.com]]>
+                <![CDATA[anton.windler@gmail.com]]>
               </value>
             </param>
             <param index="2">
@@ -33,21 +33,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUserPostAPIdataDrivenAutomationTest -->
-        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTApproach3@64b73e7a]" started-at="2025-01-04T10:22:19 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-04T10:22:20 IST" duration-ms="600" status="PASS">
+        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach2@2f40e5db]" started-at="2025-01-06T16:17:56 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-06T16:17:57 IST" duration-ms="1045" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Lisbeth]]>
+                <![CDATA[Felipe]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[billy.langworth@hotmail.com]]>
+                <![CDATA[margarite.russel@yahoo.com]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Male]]>
+                <![CDATA[Female]]>
               </value>
             </param>
             <param index="3">
@@ -59,16 +59,16 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUserPostAPIdataDrivenAutomationTest -->
-        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTApproach3@64b73e7a]" started-at="2025-01-04T10:22:20 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-04T10:22:20 IST" duration-ms="508" status="PASS">
+        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach2@2f40e5db]" started-at="2025-01-06T16:17:57 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-06T16:17:57 IST" duration-ms="716" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Terrence]]>
+                <![CDATA[Bill]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[franklin.bergstrom@gmail.com]]>
+                <![CDATA[josue.douglas@hotmail.com]]>
               </value>
             </param>
             <param index="2">
@@ -85,16 +85,16 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUserPostAPIdataDrivenAutomationTest -->
-        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTApproach3@64b73e7a]" started-at="2025-01-04T10:22:20 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-04T10:22:21 IST" duration-ms="481" status="PASS">
+        <test-method signature="createUserPostAPIdataDrivenAutomationTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach2@2f40e5db]" started-at="2025-01-06T16:17:57 IST" name="createUserPostAPIdataDrivenAutomationTest" data-provider="createUserDDT" finished-at="2025-01-06T16:17:58 IST" duration-ms="1010" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Reina]]>
+                <![CDATA[Georgina]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[hong.ernser@yahoo.com]]>
+                <![CDATA[dewitt.runte@yahoo.com]]>
               </value>
             </param>
             <param index="2">
@@ -111,7 +111,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUserPostAPIdataDrivenAutomationTest -->
-      </class> <!-- com.api.tests.createUserPOSTAPIDDTApproach3 -->
+      </class> <!-- com.api.tests.createUserPOSTAPIDDTFakerLibraryApproach2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
