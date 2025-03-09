@@ -3,6 +3,7 @@ package com.api.tests;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+import org.hamcrest.Matchers;
 
 public class digestAuthenticationAPItest {
 	
@@ -18,8 +19,11 @@ public class digestAuthenticationAPItest {
 		
 		.then()
 			.statusCode(200)
-			.header("Content-Type", "application/json")
+			.time(Matchers.lessThan(2000L))
+			.assertThat().body("authenticated", oneOf(true,false))
 			.body("authenticated", equalTo(true))
+			.body("user", equalTo("user"))
+			.header("Content-Type", "application/json")
 			.log().all();
 	}
 	
@@ -35,8 +39,11 @@ public class digestAuthenticationAPItest {
 		
 		.then()
 			.statusCode(200)
-			.header("Content-Type", "application/json")
+			.time(Matchers.lessThan(2000L))
+			.assertThat().body("authenticated", oneOf(true,false))
 			.body("authenticated", equalTo(true))
+			.body("user", equalTo("user"))
+			.header("Content-Type", "application/json")
 			.log().all();
 	}
 	
@@ -52,8 +59,11 @@ public class digestAuthenticationAPItest {
 		
 		.then()
 			.statusCode(200)
-			.header("Content-Type", "application/json")
+			.time(Matchers.lessThan(2000L))
+			.assertThat().body("authenticated", oneOf(true,false))
 			.body("authenticated", equalTo(true))
+			.body("user", equalTo("user"))
+			.header("Content-Type", "application/json")
 			.log().all();
 	}
 }

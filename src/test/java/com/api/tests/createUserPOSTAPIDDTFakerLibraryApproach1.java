@@ -2,6 +2,7 @@ package com.api.tests;
 
 import static org.hamcrest.Matchers.oneOf;
 
+import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -60,6 +61,7 @@ public class createUserPOSTAPIDDTFakerLibraryApproach1 {
 		
 		.then()
 			.statusCode(201)
+			.time(Matchers.lessThan(2000L))
 			.assertThat().body("gender", oneOf("male","female"))
 			.assertThat().body("status", oneOf("active","inactive"))
 			.header("Content-Type", "application/json; charset=utf-8")

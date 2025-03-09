@@ -1,6 +1,7 @@
 package com.api.tests;
 
 import org.apache.commons.io.IOUtils;
+import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import java.io.File;
@@ -27,6 +28,7 @@ public class SOAPAPIs {
 			
 		.then()
 			.statusCode(200)
+			.time(Matchers.lessThan(2000L))
 			.header("Content-Type", "text/xml; charset=utf-8")
 			.body("//*:AddResult.text()", equalTo("20"))
 			.log().all();
@@ -49,6 +51,7 @@ public class SOAPAPIs {
 			
 		.then()
 			.statusCode(200)
+			.time(Matchers.lessThan(2000L))
 			.header("Content-Type", "text/xml; charset=utf-8")
 			.body("//*:SubtractResult.text()", equalTo("10"))
 			.log().all();
@@ -72,6 +75,7 @@ public class SOAPAPIs {
 			
 		.then()
 			.statusCode(200)
+			.time(Matchers.lessThan(2000L))
 			.header("Content-Type", "text/xml; charset=utf-8")
 			.body("//*:MultiplyResult.text()", equalTo("300"))
 			.log().all();
@@ -95,6 +99,7 @@ public class SOAPAPIs {
 			
 		.then()
 			.statusCode(200)
+			.time(Matchers.lessThan(2000L))
 			.header("Content-Type", "text/xml; charset=utf-8")
 			.body("//*:DivideResult.text()", equalTo("3"))
 			.log().all();

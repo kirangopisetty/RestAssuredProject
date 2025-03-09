@@ -2,7 +2,7 @@ package com.api.tests;
 
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import org.hamcrest.Matchers;
 
 public class oAuth1AuthenticationAPItest {
 	
@@ -12,12 +12,13 @@ public class oAuth1AuthenticationAPItest {
 		given()
 			.header("Accept", "application/json")
 			.auth().oauth("consumerKey", "consumerSecret", "accessToken", "secretToken")
-			
+		 // .auth().oauth(consumerKey, consumerSecret, accessToken, secretToken, signature)
 		.when()
-			.get("your API URL goes here")
+			.get("type your OAuth1 enabled API URL here")
 		
 		.then()
 			.statusCode(200)
+			.time(Matchers.lessThan(2000L))
 		//	.body("authenticated", equalTo(true))
 			.header("Content-Type", "application/json")
 			.log().all();			

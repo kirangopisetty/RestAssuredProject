@@ -3,6 +3,7 @@ package com.api.tests;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
+import org.hamcrest.Matchers;
 
 public class bearerAuthenticationAPItest {
 	
@@ -18,8 +19,11 @@ public class bearerAuthenticationAPItest {
 		
 		.then()
 			.statusCode(200)
+			.time(Matchers.lessThan(2000L))
+			.assertThat().body("authenticated", oneOf(true,false))
 			.body("authenticated", equalTo(true))
+			.body("token", equalTo("12345"))
 			.header("Content-Type", "application/json")
-			.log().all();
+			.log().body();
 	}
 }
