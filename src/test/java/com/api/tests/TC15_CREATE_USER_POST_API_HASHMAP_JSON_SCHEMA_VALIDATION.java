@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 import java.util.HashMap;
 
-public class TC19_CreateUserPOSTapiHashMapInteroperabilityTesting {
+public class TC15_CREATE_USER_POST_API_HASHMAP_JSON_SCHEMA_VALIDATION {
 	
 	@Test
 	public void createUserPOSTapiJavaFakerLibrary() {
@@ -26,7 +26,6 @@ public class TC19_CreateUserPOSTapiHashMapInteroperabilityTesting {
 	
 		given()
 			.header("Accept","application/json")
-			.header("User-Agent","Mozilla/5.0 (X11; Linux i686; rv:136.0) Gecko/20100101 Firefox/136.0")
 			.header("Content-Type", "application/json")
 			.header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
 		

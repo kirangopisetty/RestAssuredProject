@@ -3,7 +3,7 @@ package com.api.tests;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
-public class TC09_IntroToJavaFakerLibrary {
+public class TC09_INTRODUCTION_JAVA_FAKER_LIBRARY {
 	
 	@Test
 	public void fakerLibrary() {

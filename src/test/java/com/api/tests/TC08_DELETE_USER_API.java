@@ -5,7 +5,7 @@ import static org.hamcrest.Matchers.isEmptyOrNullString;
 
 import org.testng.annotations.Test;
 
-public class TC08_DeleteUserAPI {
+public class TC08_DELETE_USER_API {
 	
 	@Test
 	public void deleteUser() {

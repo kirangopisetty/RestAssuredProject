@@ -4,7 +4,7 @@ import static io.restassured.RestAssured.*;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
 
-public class TC21_DeleteUserAPIInteroperabilityTesting {
+public class TC21_DELETE_USER_API_INTEROPERABILITY_TESTING {
 	
 	@Test
 	public void deleteUserAPI() {

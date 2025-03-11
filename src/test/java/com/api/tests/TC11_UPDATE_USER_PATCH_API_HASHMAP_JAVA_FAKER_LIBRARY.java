@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import org.json.JSONObject;
 import com.github.javafaker.Faker;
-public class TC11_UpdateUserPATCHapiHashMapJavaFakerLibrary {
+public class TC11_UPDATE_USER_PATCH_API_HASHMAP_JAVA_FAKER_LIBRARY {
 
 	Faker faker = new Faker();
 	@Test

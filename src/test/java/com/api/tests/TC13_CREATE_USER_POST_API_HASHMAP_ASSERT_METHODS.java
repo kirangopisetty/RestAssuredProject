@@ -8,7 +8,7 @@ import com.github.javafaker.Faker;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
-public class TC13_CreateUserPOSTapiHashMapAssertFunctions {
+public class TC13_CREATE_USER_POST_API_HASHMAP_ASSERT_METHODS {
 		
 	@Test
 	public void createUserPOSTapiHashMapAssertFunctions() {

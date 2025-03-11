@@ -1,17 +1,22 @@
 package com.api.tests;
 
-import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import static org.hamcrest.Matchers.isEmptyOrNullString;
+import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
+import static org.hamcrest.Matchers.oneOf;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import com.github.javafaker.Faker;
-
-import io.restassured.module.jsv.JsonSchemaValidator;
-
-import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 
-public class TC17_apiChainingAutomationJsonSchemaValidation {
+import org.testng.annotations.Test;
+
+import com.github.javafaker.Faker;
+
+import static io.restassured.RestAssured.*;
+
+public class TC12_API_CHAINING_AUTOMATION {
 
 	int extractedID;
 	@Test (priority = 1)
@@ -26,7 +31,6 @@ public class TC17_apiChainingAutomationJsonSchemaValidation {
 		requestBody.put("status","active");
 		
 		extractedID = given()
-				.header("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/131.0.2903.86")
 				.header("Accept","application/json")
 				.header("Content-Type", "application/json")
 				.header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
@@ -36,7 +40,7 @@ public class TC17_apiChainingAutomationJsonSchemaValidation {
 				.post("https://gorest.co.in/public/v2/users")
 				.jsonPath().getInt("id");	// to extract ID from the POST API response body
 				System.out.println("The user is created with ID >> "+extractedID);
-				
+		
 		/*	.then()
 				.log().status()
 				.log().body()
@@ -60,7 +64,6 @@ public class TC17_apiChainingAutomationJsonSchemaValidation {
 		
 		
 			given()
-			.header("User-Agent","Mozilla/5.0 (X11; Linux i686; rv:136.0) Gecko/20100101 Firefox/136.0")
 				.header("Accept","application/json")
 				.header("Content-Type","application/json")
 				.header("Authorization","Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
@@ -72,7 +75,6 @@ public class TC17_apiChainingAutomationJsonSchemaValidation {
 			.then()
 				.log().body()
 				.statusCode(200)
-				.assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("jsonSchemaPATCHapi.json"))
 				.header("Content-Type", "application/json; charset=utf-8")
 				.time(lessThan(3000L))
 				.time(greaterThan(100L))
@@ -88,7 +90,6 @@ public class TC17_apiChainingAutomationJsonSchemaValidation {
 	public void deleteUserAPI() {
 		
 		given()
-		.header("User-Agent","Mozilla/5.0 (Macintosh; Intel Mac OS X 14_7_4) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.3 Safari/605.1.15")
 			.header("Accept","application/json")
 			.header("Content-Type","application/json")
 			.header("Authorization","Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
@@ -100,6 +101,7 @@ public class TC17_apiChainingAutomationJsonSchemaValidation {
 			.log().status()
 			.time(lessThanOrEqualTo(3000L))
 			.time(greaterThanOrEqualTo(100L))
+			
 			.statusCode(204)
 			.statusLine("HTTP/1.1 204 No Content")
 			.body(isEmptyOrNullString());	

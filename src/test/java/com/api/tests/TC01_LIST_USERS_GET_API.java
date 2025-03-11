@@ -1,17 +1,14 @@
 package com.api.tests;
 
-import static io.restassured.RestAssured.*;
 import org.testng.annotations.Test;
-
-import io.restassured.module.jsv.JsonSchemaValidator;
-
+import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 
-public class TC14_ListUsersGETapiJsonSchemaValidation {
-
+public class TC01_LIST_USERS_GET_API {
+	
 	@Test
-	public void listUsersGETapi() {
+public void listUsersGETapi() {
 		
 		given()	// api request section
 			.header("Accept", "application/json")
@@ -22,8 +19,11 @@ public class TC14_ListUsersGETapiJsonSchemaValidation {
 			.get("https://gorest.co.in/public/v2/users")
 			
 		.then()		// api response section
-			.log().body()
-			.assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("jsonSchemaGETapi.json"))
+		//	.log().status()		// print status code
+		//	.log().body()		// print response body
+		//	.log().headers()	// print response headers
+			.log().all()
+			
 			.body("[1].id", greaterThan(0))
 			.time(Matchers.lessThan(2000L))	//Verify if response time < 2 seconds
 			.statusCode(200)	// Verify if response code=200 OK
@@ -31,5 +31,7 @@ public class TC14_ListUsersGETapiJsonSchemaValidation {
 			.header("Content-Type", "application/json; charset=utf-8")	// Verify if response body is in JSON format
 			.body("gender", hasItems("male","female"))		// Verify if gender is either male or female
 			.body("status", hasItems("active","inactive"));	// Verify if status is either active or inactive
+		//	.body("[0].name", equalTo("Mina Mishra"))
+		//	.body("[5].email", equalTo("tagore_kiran@conroy.test"));
 	}
 }

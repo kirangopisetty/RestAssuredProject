@@ -6,7 +6,7 @@ import java.util.HashMap;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 
-public class TC02_CreateUserPOSTapiHashMap {
+public class TC02_CREATE_USER_POST_API_HASHMAP {
 	
 	@Test
 	public void createUserAPI() {

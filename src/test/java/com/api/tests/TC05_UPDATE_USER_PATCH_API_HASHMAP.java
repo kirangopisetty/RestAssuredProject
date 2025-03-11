@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.oneOf;
 import java.util.HashMap;
 
-public class TC05_UpdateUserPATCHapiHashMap {
+public class TC05_UPDATE_USER_PATCH_API_HASHMAP {
 	
 	@Test
 	public void updateUserPATCHapiHashMap() {

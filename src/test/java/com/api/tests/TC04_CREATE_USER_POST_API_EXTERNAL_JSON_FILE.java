@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-public class TC04_CreateUserPOSTapiExternalJSONfile {
+public class TC04_CREATE_USER_POST_API_EXTERNAL_JSON_FILE {
 	
 	@Test
 	public void createUserPOSTapiExternalJSONfile() throws FileNotFoundException {

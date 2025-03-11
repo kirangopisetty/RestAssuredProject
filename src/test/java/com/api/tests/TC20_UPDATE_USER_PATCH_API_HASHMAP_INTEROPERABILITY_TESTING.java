@@ -10,7 +10,7 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 
-public class TC20_UpdateUserPATCHapiHashMapInteroperabilityTesting {
+public class TC20_UPDATE_USER_PATCH_API_HASHMAP_INTEROPERABILITY_TESTING {
 	
 	@Test
 	public void updateUserPATCHapiHashMap() {

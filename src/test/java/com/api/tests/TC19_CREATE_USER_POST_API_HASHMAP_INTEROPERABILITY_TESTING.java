@@ -5,11 +5,13 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
+import io.restassured.module.jsv.JsonSchemaValidator;
+
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 import java.util.HashMap;
 
-public class TC10_CreateUserPOSTapiHashMapJavaFakerLibrary {
+public class TC19_CREATE_USER_POST_API_HASHMAP_INTEROPERABILITY_TESTING {
 	
 	@Test
 	public void createUserPOSTapiJavaFakerLibrary() {
@@ -24,6 +26,7 @@ public class TC10_CreateUserPOSTapiHashMapJavaFakerLibrary {
 	
 		given()
 			.header("Accept","application/json")
+			.header("User-Agent","Mozilla/5.0 (X11; Linux i686; rv:136.0) Gecko/20100101 Firefox/136.0")
 			.header("Content-Type", "application/json")
 			.header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
 		
@@ -34,6 +37,7 @@ public class TC10_CreateUserPOSTapiHashMapJavaFakerLibrary {
 		.then()
 			.log().status()
 			.log().body()
+			.assertThat().body(JsonSchemaValidator.matchesJsonSchemaInClasspath("jsonSchemaPOSTapi.json"))
 			.statusCode(201)
 			.statusLine("HTTP/1.1 201 Created")
 			.assertThat().body("gender", oneOf("male","female"))

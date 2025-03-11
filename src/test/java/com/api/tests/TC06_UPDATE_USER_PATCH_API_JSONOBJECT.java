@@ -1,34 +1,29 @@
 package com.api.tests;
 
+import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
-import org.json.JSONObject;
-import org.json.JSONTokener;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import org.json.JSONObject;
+public class TC06_UPDATE_USER_PATCH_API_JSONOBJECT {
 
-public class TC07_UpdateUserPATCHapiExternalJSONFile {
-	
 	@Test
-	public void updateUserPATCHapiExternalJSONFile() throws FileNotFoundException {
+	public void updateUserPATCHapiJSONObject() {
 		
-		File file = new File(".\\src\\test\\resources\\requestBodyPATCH.json");	// opening the specified file
-		FileReader filereader = new FileReader(file);	// reading the opened file contents
-		JSONTokener jsonTokener = new JSONTokener(filereader);	// converting byte[] streams into human readable format
-		JSONObject requestBody = new JSONObject(jsonTokener);	// convert json data into key-value pair format
-				
+		JSONObject requestBody = new JSONObject();
+		requestBody.put("name", "Lord Ram");
+		requestBody.put("email", "rama@laxman.com");
+		requestBody.put("status", "active");
+			
 			given()
 				.header("Accept","application/json")
 				.header("Content-Type","application/json")
 				.header("Authorization", "Bearer a1acf13036e08546446ecbcbeb75b11959fbfcc0795218a185cfc982f6982c29")
-		
+			
 			.when()
 				.body(requestBody.toString())
 				.patch("https://gorest.co.in/public/v2/users/7745087")
-				
+			
 			.then()
 				.log().all()
 				.statusCode(200)
@@ -37,7 +32,7 @@ public class TC07_UpdateUserPATCHapiExternalJSONFile {
 				.time(lessThan(3000L))
 				.assertThat().body("gender", oneOf("male","female"))
 				.assertThat().body("status", oneOf("active","inactive"))
-				.body("name", equalTo("Mr.Rama"))
+				.body("name", equalTo("Lord Ram"))
 				.body("gender", equalTo("male"))
 				.body("email", equalTo("rama@laxman.com"))
 				.body("status", equalTo("active"));	

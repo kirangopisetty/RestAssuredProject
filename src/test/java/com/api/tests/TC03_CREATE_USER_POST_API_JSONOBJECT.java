@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
 
-public class TC03_CreateUserPOSTapiJsonObject {
+public class TC03_CREATE_USER_POST_API_JSONOBJECT {
 
 	@Test
 	public void createUserPostAPIjsonObject() {
