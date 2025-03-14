@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.api.tests.TC13_CreateUserPOSTapiHashMapAssertFunctions">
+      <class name="com.api.tests.TC01_LIST_USERS_GET_API">
         <methods>
-          <include name="createUserPOSTapiHashMapAssertFunctions"/>
+          <include name="listUsersGETapi"/>
         </methods>
-      </class> <!-- com.api.tests.TC13_CreateUserPOSTapiHashMapAssertFunctions -->
+      </class> <!-- com.api.tests.TC01_LIST_USERS_GET_API -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
