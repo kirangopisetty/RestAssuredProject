@@ -9,7 +9,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import static org.hamcrest.Matchers.equalTo;
 
-public class SOAPAPIs {
+public class TC49_SOAP_APIs {
 	
 	@Test
 	public void testSOAPapiAdd() throws IOException {

@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 
-public class digestAuthenticationAPItest {
+public class TC44_DIGEST_AUTH_API {
 	
 	@Test
 	public void digestAuthAPI1() {

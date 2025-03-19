@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 
-public class bearerAuthenticationAPItest {
+public class TC45_BEARER_ACCESS_TOKEN_AUTH_API {
 	
 	@Test
 	public void bearerAuthAPI() {

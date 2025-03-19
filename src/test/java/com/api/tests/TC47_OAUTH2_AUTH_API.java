@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import org.hamcrest.Matchers;
 
-public class oAuth2AuthenticationAPItest {
+public class TC47_OAUTH2_AUTH_API {
 	
 	@Test
 	public void oAuth2API() {
@@ -15,6 +15,9 @@ public class oAuth2AuthenticationAPItest {
 			
 		.when()
 			.get("https://api.github.com/user/repos")
+			
+			// OAuth2 GET/POST/PUT/DELETE APIs are available at below:
+			// https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#create-a-repository-for-the-authenticated-user
 		
 		.then()
 			.statusCode(200)

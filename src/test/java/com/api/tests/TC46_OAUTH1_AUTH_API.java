@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import org.hamcrest.Matchers;
 
-public class oAuth1AuthenticationAPItest {
+public class TC46_OAUTH1_AUTH_API {
 	
 	@Test
 	public void oAuth1API() {
@@ -13,6 +13,7 @@ public class oAuth1AuthenticationAPItest {
 			.header("Accept", "application/json")
 			.auth().oauth("consumerKey", "consumerSecret", "accessToken", "secretToken")
 		 // .auth().oauth(consumerKey, consumerSecret, accessToken, secretToken, signature)
+	
 		.when()
 			.get("type your OAuth1 enabled API URL here")
 		

@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 import java.nio.file.Files;
 import io.restassured.response.Response;
 
-public class fileDownloadAPI {
+public class TC41_DOWNLOAD_LIST_USERS_GET_API_RESPONSE {
 
 	@Test
-	public void fileDownload() throws IOException {
+	public void downloadGetAPIresponse() throws IOException {
 		
 	Response response=	given()
 			.header("Accept", "application/json")
@@ -22,11 +22,12 @@ public class fileDownloadAPI {
 			.get("https://gorest.co.in/public/v2/users")
 			.thenReturn();
 			//.andReturn();
+	
 		System.out.println("Response code >> "+response.getStatusCode());
 		Assert.assertEquals(response.getStatusCode(), 200);
 	
-		byte[] bytes = response.getBody().asByteArray();
+		byte[] bytes = response.getBody().asByteArray();	// capture the byte[] response
 		File file = new File("C:\\Users\\Kiran\\Downloads\\REST ASSURED TESTING\\allUsersResponse1.json");
-		Files.write(file.toPath(), bytes);
+		Files.write(file.toPath(), bytes);	// write byte[] response into the specified file
 	}
 }
