@@ -1,7 +1,6 @@
 package com.api.tests;
 
 import static org.hamcrest.Matchers.*;
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import org.json.JSONObject;

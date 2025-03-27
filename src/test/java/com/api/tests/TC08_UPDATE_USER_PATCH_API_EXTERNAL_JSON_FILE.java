@@ -1,6 +1,5 @@
 package com.api.tests;
 
-import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.annotations.Test;

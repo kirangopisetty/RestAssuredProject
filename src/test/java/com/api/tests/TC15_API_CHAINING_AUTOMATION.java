@@ -7,13 +7,9 @@ import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.hamcrest.Matchers.oneOf;
-
 import java.util.HashMap;
-
 import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
-
 import static io.restassured.RestAssured.*;
 
 public class TC15_API_CHAINING_AUTOMATION {

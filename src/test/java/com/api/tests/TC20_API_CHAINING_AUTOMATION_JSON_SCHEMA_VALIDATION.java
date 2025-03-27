@@ -1,13 +1,9 @@
 package com.api.tests;
 
 import static io.restassured.RestAssured.*;
-
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
-
 import io.restassured.module.jsv.JsonSchemaValidator;
-
 import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 

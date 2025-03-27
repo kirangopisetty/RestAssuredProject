@@ -1,7 +1,6 @@
 package com.api.tests;
 
 import java.util.HashMap;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;

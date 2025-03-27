@@ -2,9 +2,7 @@ package com.api.tests;
 
 import static io.restassured.RestAssured.*;
 import org.testng.annotations.Test;
-
 import io.restassured.module.jsv.JsonSchemaValidator;
-
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 

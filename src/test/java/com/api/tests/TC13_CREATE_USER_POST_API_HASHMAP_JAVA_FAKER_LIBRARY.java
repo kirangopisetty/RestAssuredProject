@@ -2,9 +2,7 @@ package com.api.tests;
 
 import static io.restassured.RestAssured.*;
 import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
-
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 import java.util.HashMap;

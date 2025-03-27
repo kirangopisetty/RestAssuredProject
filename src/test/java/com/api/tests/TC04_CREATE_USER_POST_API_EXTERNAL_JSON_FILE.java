@@ -1,11 +1,9 @@
 package com.api.tests;
 
-import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
-
 import org.json.JSONTokener;
 import java.io.File;
 import java.io.FileNotFoundException;

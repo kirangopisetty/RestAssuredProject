@@ -32,6 +32,8 @@ public void listUsersGETapi() {
 			.body("gender", hasItems("male","female"))		// Verify if gender is either male or female
 			.body("status", hasItems("active","inactive"));	// Verify if status is either active or inactive
 		//	.body("[0].name", equalTo("Mina Mishra"))
+		//	.body("[1].name", contains("Divya"))
+		//	.body("name", contains("Kiran"))
 		//	.body("[5].email", equalTo("tagore_kiran@conroy.test"));
 	}
 }

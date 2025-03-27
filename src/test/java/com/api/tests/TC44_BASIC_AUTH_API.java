@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 import org.hamcrest.Matchers;
 
-public class TC43_BASIC_AUTH_API {
+public class TC44_BASIC_AUTH_API {
 	
 	@Test
 	public void basicAuthAPI() {

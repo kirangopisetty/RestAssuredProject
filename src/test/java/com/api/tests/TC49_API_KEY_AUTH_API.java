@@ -4,7 +4,7 @@ import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 
-public class TC48_API_KEY_AUTH_API {
+public class TC49_API_KEY_AUTH_API {
 	
 	@Test
 	public void apiKeyAuthAPI1() {

@@ -1,12 +1,9 @@
 package com.api.tests;
 
 import static io.restassured.RestAssured.*;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.github.javafaker.Faker;
-
 import static org.hamcrest.Matchers.*;
 import org.json.JSONObject;
 

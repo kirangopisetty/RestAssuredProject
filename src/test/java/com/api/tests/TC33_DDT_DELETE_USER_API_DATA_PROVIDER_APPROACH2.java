@@ -1,11 +1,9 @@
 package com.api.tests;
 
 import static io.restassured.RestAssured.*;
-
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
-import org.json.JSONObject;
 
 public class TC33_DDT_DELETE_USER_API_DATA_PROVIDER_APPROACH2 {
 	

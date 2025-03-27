@@ -2,7 +2,6 @@ package com.api.tests;
 
 import static io.restassured.RestAssured.*;
 import java.io.File;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import io.restassured.response.Response;

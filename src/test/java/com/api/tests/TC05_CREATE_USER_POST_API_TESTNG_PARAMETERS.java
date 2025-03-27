@@ -1,9 +1,7 @@
 package com.api.tests;
 
 import static org.hamcrest.Matchers.oneOf;
-
 import org.json.JSONObject;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;

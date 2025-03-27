@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import org.hamcrest.Matchers;
 
-public class TC46_OAUTH1_AUTH_API {
+public class TC47_OAUTH1_AUTH_API {
 	
 	@Test
 	public void oAuth1API() {

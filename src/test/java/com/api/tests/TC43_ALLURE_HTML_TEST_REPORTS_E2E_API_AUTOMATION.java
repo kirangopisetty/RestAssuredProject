@@ -4,7 +4,6 @@ import static io.restassured.RestAssured.*;
 import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
-
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -17,7 +16,7 @@ import static org.hamcrest.Matchers.*;
 import java.util.HashMap;
 
 @Epic("EPIC-Achieve end to end test case automation")
-public class TC49_ALLURE_HTML_TEST_REPORTS_E2E_API_AUTOMATION {
+public class TC43_ALLURE_HTML_TEST_REPORTS_E2E_API_AUTOMATION {
 	
 	int extractedID;
 	
